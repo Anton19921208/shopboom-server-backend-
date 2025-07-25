@@ -7,7 +7,13 @@ const app = express();
 const PORT = 5000;
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://shopboom-admin.vercel.app',
+    'https://shopboom-store.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 // Подключение к MongoDB Atlas
