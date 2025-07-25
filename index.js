@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // Подключение к MongoDB Atlas
 mongoose.connect(
-  'mongodb+srv://antondubikivskij:Z3qec7QhKUKOQVeG@cluster0.4cuzzdt.mongodb.net/shop?retryWrites=true&w=majority&appName=Cluster0'
+  process.env.MONGODB_URI
 )
   .then(() => console.log('MongoDB подключена'))
   .catch(err => console.log('Ошибка подключения к MongoDB:', err));
